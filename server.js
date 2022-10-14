@@ -10,10 +10,10 @@ app.use(express.static('public'));
 
 app.use(require('./routes'));
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/', {
-  useFindAndModify: false,
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/BAPI', {
+ 
   useNewUrlParser: true,
-  useCreateIndex: true,
+
   useUnifiedTopology: true
 });
 
