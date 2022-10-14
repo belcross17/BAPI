@@ -10,13 +10,13 @@ app.use(express.static('public'));
 
 app.use(require('./routes'));
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/BAPI', {
-    useFindAndModify: false,
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    useUnifiedTopology: true
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/', {
+  useFindAndModify: false,
+  useNewUrlParser: true,
+  useCreateIndex: true,
+  useUnifiedTopology: true
 });
 
 mongoose.set('debug', true);
 
-app.listen(PORT, () => console.log(`Connect on localhost:${PORT}!!`));
+app.listen(PORT, () => console.log(`Connected on localhost:${PORT}!!`));
